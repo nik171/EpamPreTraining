@@ -21,7 +21,7 @@ public class NumberWorker {
                 "\ngreatest digit = " + maxDigit + "\n";
     }
 
-    public static String isPalindrome(int n) {
+    public static boolean isPalindrome(int n) {
         n = n > 0 ? n : -n;
         int m = n;
         int palindrome = 0;
@@ -32,27 +32,21 @@ public class NumberWorker {
         }
 
         if (palindrome == m) {
-            return "\n***** Task2_2 *****\n" + "number = " + m +
-                    "\nthis number is a palindrome" + "\n";
-        } else {
-            return "\n***** Task2_2 *****\n" + "number = " + m +
-                    "\nthis number is not a palindrome" + "\n";
+            return true;
         }
+        return false;
     }
 
-    public static String isPrime(int n) {
+    public static boolean isPrime(int n) {
         n = n > 0 ? n : -n;
         int m = n;
 
         for (int i = 2; i <= Math.ceil(Math.sqrt(n)); i++) {
             if (n % i == 0) {
-                return "\n***** Task2_3 *****\n" + "number = " + m +
-                        "\nis not prime" + "\n";
+                return false;
             }
         }
-
-        return "\n***** Task2_3 *****\n" + "number = " + m +
-                "\nprime" + "\n";
+        return true;
     }
 
     public static String calcPrimeDivisors(int n) {
